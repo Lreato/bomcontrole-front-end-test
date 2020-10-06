@@ -1,1 +1,120 @@
-<h1>Crie o Formulário de cadastro de usuario aqui.</h1>
+<div class="signup" ng-controller="createUserController" style="margin-top: 5%;">
+    <div class="container">
+        <div class="form-group">
+            <div class="col-sm-12">
+                <div class="panel panel-primary">
+                    <div Style="background-color: #1abc9c" class="panel-heading">Formulário de Cadastro</div>
+                    <div class="panel-body">
+                        <form name="signupform">
+                            <fieldset>
+                                <div class="Row">
+                                    <div class="col-md-12">
+                                        <h4>Dados Pessoais:</h4>
+                                    </div>
+                                </div>
+                                <div class="Row">
+                                    <div class="col-sm-6">
+                                        <label for="name" class="required">Nome:</label>
+                                        <input id="name" class="form-control" type="text" name="name" ng-required="true"
+                                            ng-model="user.name">
+                                        <small id="nameHelp" class="form-text text-muted">* Campo Obrigatório</small>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <label for="dateBirth" class="required">Nascimento:</label>
+                                        <input id="dateBirth" class="form-control" type="text" name="dateBirth"
+                                            ng-required="true" ng-model="user.dateBirth" ui-date-mask="DD/MM/YYYY">
+                                            <small id="birthdateHelp" class="form-text text-muted">* Campo Obrigatório</small>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group select-genero required">
+                                            <label for="inputSex" class="required">Gênero:</label>
+                                            <select id="inputSex" class="form-control" name="sex"
+                                                ng-model="user.sex" ng-required="true">
+                                                <option selected>Escolha...</option>
+                                                <option>Feminino</option>
+                                                <option>Masculino</option>
+                                                <option>Outro</option>
+                                            </select>
+                                            <small id="sexHelp" class="form-text text-muted">* Campo Obrigatório</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="Row">
+                                    <div class="form-group col-sm-4">
+                                        <label for="cpf" class="required">CPF</label>
+                                        <input id="cpf" class="form-control" type="text" name="cpf" ng-required="true"
+                                            ng-model="user.cpf" ng-maxlength="11" maxlength="11">
+                                        <small id="cpfHelp" class="form-text text-muted">* Campo Obrigatório</small>
+
+                                    </div>
+                                    <div class="form-group col-sm-4">
+                                        <label class="required ">Email:</label>
+                                        <input class="form-control" type="email" name="email" ng-required="true"
+                                            ng-model="user.email" placeholder="email@exemplo.com">
+                                            <small id="emailHelp" class="form-text text-muted">* Campo Obrigatório</small>
+                                    </div>
+                                    <div class="form-group col-sm-2">
+                                        <label>Telefone:</label>
+                                        <input class="form-control" type="tel" name="telephone" placeholder="(99)9999-9999"
+                                            ng-model="user.telephone" ui-br-phone-number>
+                                    </div>
+                                    <div class="form-group col-sm-2">
+                                        <label>Celular:</label>
+                                        <input class="form-control" type="tel" name="phone"
+                                            placeholder="(99)99999-9999" ng-model="user.phone" ui-br-phone-number>
+                                    </div>
+                                </div>
+                                <div class="Row">
+                                    <div class="col-md-12">
+                                        <h4>Endereço:</h4>
+                                    </div>
+                                </div>
+                                <div class="Row">
+                                    <div class="form-group col-sm-6">
+                                        <label class="control-label ">Lougradouro:</label>
+                                        <input class="form-control" type="text" name="street" ng-model="user.street"
+                                            placeholder="Rua do Teste">
+                                    </div>
+                                    <div class="form-group col-sm-6">
+                                        <label class="control-label ">Cidade:</label>
+                                        <input class="form-control" type="text" name="city" ng-model="user.city"
+                                            placeholder="São Paulo">
+                                    </div>
+                                </div>
+                                <div class="Row">
+                                    <div class="form-group col-sm-4">
+                                        <label class="control-label ">Estado:</label>
+                                        <input class="form-control" type="text" name="state" ng-model="user.state"
+                                            placeholder="São Paulo">
+                                    </div>
+                                    <div class="form-group col-sm-2">
+                                        <label class="control-label">CEP:</label>
+                                        <input class="form-control" type="text" name="cep" ng-model="user.cep"
+                                            placeholder="09000-000" ui-br-cep-mask>
+                                    </div>
+                                    <div class="form-group col-sm-2">
+                                        <label class="control-label ">Número:</label>
+                                        <input class="form-control" type="number" name="number" ng-model="user.number"
+                                            placeholder="99">
+                                    </div>
+                                    <div class="form-group col-sm-4">
+                                        <label class="control-label ">Bairro:</label>
+                                        <input class="form-control" type="text" name="district" ng-model="user.district"
+                                            placeholder="Bairro">
+                                    </div>
+                                </div>
+                            </fieldset>
+                            <div class="Row">
+                                <div class="col-md-12">
+                                    <button Style="background-color: #1abc9c" class="btn btn-primary" ng-model="salvar"
+                                        ng-disabled="signupform.$invalid" ng-click="salvar(user)"
+                                        type="button">Salvar</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

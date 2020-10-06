@@ -1,0 +1,51 @@
+<div style="margin-top: 5%" class="container" ng-controller="userListController">
+    <div class="row">
+        <div class="panel panel-primary">
+            <div Style="background-color: #1abc9c" class="panel-heading">Consulta de usuários</div>
+            <div class="container">
+                <div style="margin-top: 3%" class="row">
+                    <div class="col-md-4 col-md-offset-8">
+                        <div class="form-group">
+                            <label for="search">Buscar:</label>
+                            <input type="text" class="form-control" name="search" ng-model="search" ng-keyup="searchFilter($event)" />
+                        </div>
+                        </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Nome</th>
+                                    <th scope="col">Aniversario</th>
+                                    <th scope="col">Gênero</th>
+                                    <th scope="col">CPF</th>
+                                    <th scope="col">E-mail</th>
+                                    <th scope="col">Telefone</th>
+                                    <th scope="col">Ação</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="user in listaUsuarios| filter: buscar ">
+                                    <td scope="col">{{user.name}}</td>
+                                    <td scope="col">{{user.dateBirth | date:'dd/MM/yyyy'}}</td>
+                                    <td scope="col">{{user.sex}}</td>
+                                    <td scope="col">{{user.cpf | cpf}}</td>
+                                    <td scope="col">{{user.email}}</td>
+                                    <td scope="col">{{user.phone | telefone}}</td>
+                                    <td>
+                                        <span class="input-group-btn">
+                                            <button style="background-color: #1abc9c;" class="btn btn-danger" type="button"
+                                                ng-click="remove(user)">X</button>
+                                        </span>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
